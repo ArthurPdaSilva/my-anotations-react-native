@@ -1,0 +1,54 @@
+Com Expo:
+
+Iniciando o projeto com expo:
+npx create-expo-app@latest
+
+Iniciando o projeto com themas:
+npx create-expo-app@latest my-app -t
+
+Iniciando o app:
+npm run android
+
+Já vem com expo, mas é bom trazer as tipagens caso não ache os ícones:
+npx expo install @expo/vector-icons
+
+Trabalhando com navegação:
+# Instala as dependências nativas compatíveis com a sua versão do Expo
+npx expo install react-native-screens react-native-safe-area-context
+Se você for usar a navegação por Pilha (Stack), instale também:
+npx expo install @react-navigation/native-stack
+Agora com tabs:
+npx expo install @react-navigation/bottom-tabs
+Agora com drawer:
+npx expo install react-native-gesture-handler react-native-reanimated react-native-worklets
+npm install @react-navigation/drawer
+
+Outras instalações (Expo):
+npx expo install @react-native-community/slider
+npx expo install @react-native-picker/picker
+npx expo install @react-native-async-storage/async-storage
+npx expo install @react-navigation/native
+
+
+
+Com CLI:
+Iniciando o projeto com CLI:
+npx @react-native-community/cli init NomeDoProjeto 
+//Gerando uma pasta blank com: npx react-native init NomeDoProjeto 
+
+Iniciando o app:
+npx react-native run-android
+
+Linter:
+npm i -D -E @biomejs/biome
+npx @biomejs/biome init
+
+Packages:
+npm i @react-native-community/slider
+npm i @react-native-picker/picker
+npm i @react-native-async-storage/async-storage
+npm i @react-navigation/native
+
+npm i --save @react-native-vector-icons/common
+npm install @react-native-vector-icons/fontawesome-free-solid @react-native-vector-icons/evil-icons
+
