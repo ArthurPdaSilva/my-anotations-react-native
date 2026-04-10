@@ -1,5 +1,5 @@
-import { DesafioAppBank } from "./src/components/DesafioAppBank";
+import { DesafioBuscaCep } from "./src/components/DesafioBuscaCep";
 
 export default function App() {
-	return <DesafioAppBank />;
+	return <DesafioBuscaCep />;
 }
