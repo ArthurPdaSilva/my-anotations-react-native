@@ -9,10 +9,11 @@ npx create-expo-app@latest my-app -t
 Iniciando o app:
 npm run android
 
-Já vem com expo, mas é bom trazer as tipagens caso não ache os ícones:
-npx expo install @expo/vector-icons
 
 Trabalhando com navegação:
+npm install @react-navigation/native
+
+
 # Instala as dependências nativas compatíveis com a sua versão do Expo
 npx expo install react-native-screens react-native-safe-area-context
 Se você for usar a navegação por Pilha (Stack), instale também:
@@ -28,7 +29,13 @@ npx expo install @react-native-community/slider
 npx expo install @react-native-picker/picker
 npx expo install @react-native-async-storage/async-storage
 npx expo install @react-navigation/native
+npx expo install react-native-animatable
+Já vem com expo, mas é bom trazer as tipagens caso não ache os ícones:
+npx expo install @expo/vector-icons
 
+// Para usar o firebase, é necessário instalar o pacote e depois personalizar o metro.config.js para que o firebase funcione corretamente com o Expo.
+npx expo install firebase
+npx expo customize metro.config.js
 
 
 Com CLI:
