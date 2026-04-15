@@ -1,5 +1,6 @@
 // import { doc, getDoc } from "firebase/firestore";
 
+import { signOut } from "firebase/auth";
 import {
 	addDoc,
 	collection,
@@ -8,8 +9,15 @@ import {
 	updateDoc,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { Button, Keyboard, StyleSheet, View } from "react-native";
-import { db } from "../connection";
+import {
+	Button,
+	Keyboard,
+	StyleSheet,
+	Text,
+	TouchableOpacity,
+	View,
+} from "react-native";
+import { auth, db } from "../connection";
 import type { User } from "../types";
 import { UserForm } from "./UserForm";
 import { UserList } from "./UserList";
@@ -126,6 +134,10 @@ export function Content() {
 			.catch((error) => console.error("Error updating user: ", error));
 	};
 
+	const handleLogout = async () => {
+		await signOut(auth);
+	};
+
 	return (
 		<View style={styles.container}>
 			{showForm && (
@@ -147,6 +159,10 @@ export function Content() {
 				onPress={() => setShowForm((prev) => !prev)}
 			/>
 
+			<TouchableOpacity style={styles.button} onPress={handleLogout}>
+				<Text style={styles.buttonText}>Logout</Text>
+			</TouchableOpacity>
+
 			<UserList users={users} handleEdit={handleEdit} />
 		</View>
 	);
@@ -160,4 +176,12 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		padding: 20,
 	},
+	button: {
+		backgroundColor: "red",
+		padding: 10,
+		borderRadius: 5,
+		width: "80%",
+		marginTop: 10,
+	},
+	buttonText: { color: "white", textAlign: "center" },
 });

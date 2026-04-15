@@ -1,5 +1,10 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import {
+	// @ts-expect-error - essa função existe, mas o TypeScript não tem as definições de tipo para ela
+	getReactNativePersistence,
+	initializeAuth,
+} from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const requiredEnvVars = {
@@ -32,6 +37,9 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const auth = getAuth(app);
+// const auth = getAuth(app);
+const auth = initializeAuth(app, {
+	persistence: getReactNativePersistence(AsyncStorage),
+});
 
 export { auth, db };
