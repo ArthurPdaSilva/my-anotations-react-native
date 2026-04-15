@@ -30,6 +30,7 @@ npx expo install @react-native-picker/picker
 npx expo install @react-native-async-storage/async-storage
 npx expo install @react-navigation/native
 npx expo install react-native-animatable
+npx expo install styled-components
 Já vem com expo, mas é bom trazer as tipagens caso não ache os ícones:
 npx expo install @expo/vector-icons
 
